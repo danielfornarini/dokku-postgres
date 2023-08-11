@@ -151,8 +151,7 @@ service_create_container() {
   dokku_log_verbose_quiet "service host root: $SERVICE_HOST_ROOT"
   service_pause "$SERVICE" >/dev/null
   "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/scripts/create_ssl_certs.sh" "$SERVICE_HOST_ROOT"
-  dokku_log_verbose_quiet "$(ls -la "$SERVICE_HOST_ROOT")"
-  "$DOCKER_BIN" container run --rm -i -v "$SERVICE_HOST_ROOT/data:/var/lib/postgresql/data" -v "$SERVICE_HOST_ROOT/certs:/var/lib/postgresql/certs" "$PLUGIN_IMAGE:$PLUGIN_IMAGE_VERSION" bash -s <"$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/scripts/enable_ssl.sh" &>/dev/null
+  "$DOCKER_BIN" container run --rm -i -v "$SERVICE_HOST_ROOT/data:/var/lib/postgresql/data" -v "$SERVICE_HOST_ROOT/certs:/var/lib/postgresql/certs" "$PLUGIN_IMAGE:$PLUGIN_IMAGE_VERSION" bash -s <"$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/scripts/enable_ssl.sh"
   rm -rf "$SERVICE_HOST_ROOT/certs"
 
   suppress_output "$DOCKER_BIN" container start "$(cat "$SERVICE_ROOT/ID")"
