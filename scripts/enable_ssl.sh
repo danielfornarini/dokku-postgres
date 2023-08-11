@@ -4,6 +4,9 @@ set -e
 
 cd /var/lib/postgresql/data
 
+ls .
+ls ..
+
 cp ../certs/* .
 chown postgres:postgres server.key
 chmod 600 server.key
