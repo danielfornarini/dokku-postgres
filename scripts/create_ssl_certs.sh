@@ -1,10 +1,8 @@
 #!/bin/sh
 
-source "$PLUGIN_CORE_AVAILABLE_PATH/common/functions"
+set -e
 
 postgres_service_dir="$1"
-
-dokku_log_verbose_quiet "create ssl certs dir: $postgres_service_dir"
 
 cd "$postgres_service_dir"
 mkdir certs && cd certs
