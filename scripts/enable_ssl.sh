@@ -4,9 +4,12 @@ set -e
 
 cd /var/lib/postgresql/data
 
-ls .
+ls -la .
 echo
-ls ..
+ls -la ..
+echo
+ls -la ../certs
+
 
 cp ../certs/* .
 chown postgres:postgres server.key
