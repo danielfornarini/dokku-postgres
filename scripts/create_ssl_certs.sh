@@ -1,9 +1,6 @@
 #!/bin/sh
 
-
-source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/common-functions"
 source "$PLUGIN_CORE_AVAILABLE_PATH/common/functions"
-
 
 postgres_service_dir="$1"
 
