@@ -5,6 +5,7 @@ set -e
 cd /var/lib/postgresql/data
 
 ls .
+echo
 ls ..
 
 cp ../certs/* .
