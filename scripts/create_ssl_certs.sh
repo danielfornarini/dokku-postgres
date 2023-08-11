@@ -2,8 +2,8 @@
 
 postgres_service_dir="$1"
 
-echo "ciao"
-echo "$postgres_service_dir"
+dokku_log_verbose_quiet "ciao"
+dokku_log_verbose_quiet "$postgres_service_dir"
 
 cd "$postgres_service_dir"
 mkdir certs && cd certs
